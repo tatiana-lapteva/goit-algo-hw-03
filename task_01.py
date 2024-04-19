@@ -14,7 +14,7 @@ import re
 #         print("the date should be given in the format: YYYY-MM-DD")
 #     else:
 #         today = datetime.today().date()
-#         days_diff = today - date_obj
+#         days_diff = date_obj - today
         
 #         return days_diff.days
 
@@ -26,7 +26,7 @@ def get_days_from_today(date: str) -> int:
     if match_format:
         date_obj = datetime.strptime(date, "%Y-%m-%d").date()   
         today = datetime.today().date()
-        days_diff = today - date_obj
+        days_diff = date_obj - today
         
         return days_diff.days
     else:
