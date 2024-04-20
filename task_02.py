@@ -1,37 +1,25 @@
+""" generate the list of certain number of unique random digits whithin provided range"""
+
+
 
 import random
 
 
-
-def get_numbers_ticket(min, max, quantity):
+def get_numbers_ticket(min: int, max: int, quantity: int) -> list:
     
-    numbers = []
-    all 
+    win_tickets = []
+    all_tickets = [] 
     if isinstance(min, int) and min >=1 and \
         isinstance(max, int) and max <=1000 and \
             isinstance(quantity, int):
-        all_tickeckets = [range(min, max+1)]
-        
-       
-
-        
-
-
-
-        # for num in range(min, max+1):
-        #     num = random.randint()
-        #     if num 
-
-        
+        all_tickets.extend((range(min, max)))
+        all_tickets.append(max)
+        random.shuffle(all_tickets)
+        win_tickets = random.sample(all_tickets, k=quantity)
+        return win_tickets
+            
     else:
-        return numbers
+        return win_tickets
     
-    
-   ## random.sample(population, k): Отримання унікальних випадкових елементів зі списку population довжиною k
-
-
-
-print(type([range(1, 10)]))
-
-# lottery_numbers = get_numbers_ticket(1, 49, 6)
-# print("Ваші лотерейні числа:", lottery_numbers)
+lottery_numbers = get_numbers_ticket(1, 49, 6)
+print("Ваші лотерейні числа:", lottery_numbers)

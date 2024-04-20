@@ -1,8 +1,10 @@
 
+""" define diffference between current and predefined dates """
+
+
+
 from datetime import date, datetime
 import re
-
-# define diffference between current and predefined dates 
 
 
 ## SCENARIO 1 - catch an exception:
