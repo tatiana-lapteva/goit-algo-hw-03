@@ -11,7 +11,7 @@ def get_numbers_ticket(min: int, max: int, quantity: int) -> list:
     all_tickets = [] 
     if isinstance(min, int) and min >=1 and \
         isinstance(max, int) and max <=1000 and \
-            isinstance(quantity, int):
+            isinstance(quantity, int) and quantity <=max:
         all_tickets.extend((range(min, max)))
         all_tickets.append(max)
         random.shuffle(all_tickets)
@@ -21,5 +21,5 @@ def get_numbers_ticket(min: int, max: int, quantity: int) -> list:
     else:
         return win_tickets
     
-lottery_numbers = get_numbers_ticket(1, 49, 6)
+lottery_numbers = get_numbers_ticket(1, 49, 50)
 print("Ваші лотерейні числа:", lottery_numbers)
